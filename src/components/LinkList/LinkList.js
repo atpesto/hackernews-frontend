@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import { gql } from 'apollo-boost';
 import Link from '../Link';
 
 
@@ -23,11 +23,10 @@ class LinkList extends Component {
       <Query query={FEED_QUERY}>
         {
           ({ loading, error, data }) => {
-            if (loading) return <div>Loading</div>
-            if (error) return <div>Error</div>
+            if (loading) return <div>Loading</div>;
+            if (error) return <div>Error</div>;
 
             const linksToRender = data.feed.links;
-
 
             return (
               <div>
@@ -35,11 +34,11 @@ class LinkList extends Component {
                   linksToRender.map(link => <Link key={link.id} link={link} />)
                 }
               </div>
-            )
+            );
           }
         }
       </Query>
-    )
+    );
   }
 }
 
