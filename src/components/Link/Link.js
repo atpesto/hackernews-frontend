@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Link extends Component {
   render() {
+    const { link: { description, url } } = this.props;
     return (
       <div>
         <div>
-          {this.props.link.description} ({this.props.link.url})
+          {description} ({url})
         </div>
       </div>
     );
   }
 }
 
+
+Link.propTypes = {
+  link: PropTypes.shape({
+    description: PropTypes.string,
+    url: PropTypes.string,
+  }).isRequired,
+};
 
 export default Link;
