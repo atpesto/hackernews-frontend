@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { gql } from 'apollo-boost';
 import { Mutation } from 'react-apollo';
+import PropTypes from 'prop-types';
 
 
 const POST_MUTATION = gql`
@@ -22,6 +23,7 @@ class CreateLink extends Component {
 
   render() {
     const { description, url } = this.state;
+    const { history } = this.props;
 
     return (
       <div>
@@ -41,7 +43,11 @@ class CreateLink extends Component {
             placeholder="The URL for the link"
           />
         </div>
-        <Mutation mutation={POST_MUTATION} variables={{ description, url }}>
+        <Mutation
+          mutation={POST_MUTATION}
+          variables={{ description, url }}
+          onCompleted={() => history.push('/')}
+        >
           {
             postMutation => (
               <button type="button" onClick={postMutation}>Submit</button>
@@ -52,5 +58,11 @@ class CreateLink extends Component {
     );
   }
 }
+
+CreateLink.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default CreateLink;
