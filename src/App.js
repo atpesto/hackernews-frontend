@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from 'react';
-import LinkList from './components/LinkList';
+// import LinkList from './components/LinkList';
+import CreateLink from './components/CreateLink';
 
 
 class App extends Component {
   render() {
     return (
       <Fragment>
-        <LinkList />
+        <CreateLink />
       </Fragment>
     );
   }
