@@ -17,6 +17,10 @@ class Header extends Component {
             Feed
           </Link>
           <div className="ml1">|</div>
+          <Link to="/search" className="ml1 no-underline black">
+            Search
+          </Link>
+          <div className="ml1">|</div>
           <Link to="/create" className="ml1 no-underline black">
             Add New
           </Link>
