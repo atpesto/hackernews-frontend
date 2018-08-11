@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { gql } from 'apollo-boost';
+import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 
 import { timeDifferenceForDate } from '../../utils/timeDifference';
