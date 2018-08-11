@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { gql } from 'apollo-boost';
+import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 import PropTypes from 'prop-types';
 
